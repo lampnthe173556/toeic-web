@@ -1,136 +1,136 @@
 const studyPlan = [
   // Giai đoạn 1 (Tuần 1-13)
   {
-    week: 1, phase: 1, goal: "Nắm vững 1/2 bảng IPA, Thì Hiện tại Đơn, 25 từ 'Daily Routines'", tasks: [
-      { day: "Thứ 2", items: [{ text: "Học 10 nguyên âm đơn (Vowels)" }, { text: "Học bài HTĐ (Grammar in Use)", content: "<strong>Thì Hiện Tại Đơn (Present Simple)</strong> dùng để diễn tả một thói quen, sự thật hiển nhiên. <br><strong>Cấu trúc:</strong> S + V(s/es). <br><strong>Ví dụ:</strong> He works in an office." }] },
-      { day: "Thứ 3", items: [{ text: "Làm BT Hiện Tại Đơn (Grammar in Use)" }, { text: "Nghe playlist '6 Minute English' (YouTube)", type: "link", url: "https://youtu.be/KedyWoBrwFs?si=KfS1qAzHUX-TjPT1" }] },
-      { day: "Thứ 4", items: [{ text: "Học 25 từ 'Daily Routines' (600 Words)", content: "Học từ vựng trong sách '600 Essential Words for TOEIC'. Nhập vào app Anki để ôn tập hàng ngày." }, { text: "Đọc đoạn văn ngắn" }] },
-      { day: "Thứ 5", items: [{ text: "Học 10 phụ âm (Consonants)" }, { text: "Chép chính tả 5 câu từ bài nghe YouTube" }] },
-      { day: "Thứ 6", items: [{ text: "Shadowing 1 bài", content: "<strong>Kỹ thuật Shadowing (Nói đuổi):</strong> Lắng nghe một đoạn audio ngắn và lặp lại ngay lập tức, cố gắng bắt chước ngữ điệu, nhấn âm và tốc độ của người nói. <br><strong>Nguồn gợi ý:</strong> Dùng lại video trong playlist '6 Minute English' đã nghe." }, { text: "Ôn 25 từ đã học trên Anki" }] },
-      { day: "Thứ 7", items: [{ text: "Ôn lại toàn bộ ngữ pháp & từ vựng tuần" }] }
+    "week": 1, "phase": 1, "goal": "Nắm vững Nguyên âm IPA, Thì HTĐ, 48 từ (Ch. 1-4)", "tasks": [
+      { "day": "Thứ 2", "items": [{ "text": "Học 12 nguyên âm (Vowels)" }, { "text": "Học bài HTĐ (Grammar in Use)", "content": "<strong>Thì Hiện Tại Đơn (Present Simple)</strong> dùng để diễn tả một thói quen, sự thật hiển nhiên. <br><strong>Cấu trúc:</strong> S + V(s/es)." }] },
+      { "day": "Thứ 3", "items": [{ "text": "Làm BT Hiện Tại Đơn (Grammar in Use)" }, { "text": "Nghe playlist '6 Minute English' (YouTube)", "type": "link", "url": "https://youtu.be/KedyWoBrwFs?si=KfS1qAzHUX-TjPT1" }] },
+      { "day": "Thứ 4", "items": [{ "text": "Học 24 từ Ch.1 'Contracts' & Ch.2 'Marketing' (600 Words)", "content": "Học từ vựng trong sách '600 Essential Words for TOEIC'. Nhập vào app Anki để ôn tập hàng ngày." }, { "text": "Đọc đoạn văn ngắn" }] },
+      { "day": "Thứ 5", "items": [{ "text": "Học 24 từ Ch.3 'Warranties' & Ch.4 'Business Planning' (600 Words)" }, { "text": "Chép chính tả 5 câu từ bài nghe YouTube" }] },
+      { "day": "Thứ 6", "items": [{ "text": "Shadowing 1 bài", "content": "<strong>Kỹ thuật Shadowing (Nói đuổi):</strong> Lắng nghe và lặp lại ngay lập tức, cố gắng bắt chước ngữ điệu, nhấn âm và tốc độ." }, { "text": "Ôn 48 từ đã học trên Anki" }] },
+      { "day": "Thứ 7", "items": [{ "text": "Ôn lại toàn bộ ngữ pháp & từ vựng tuần" }] }
     ]
   },
   {
-    week: 2, phase: 1, goal: "Hoàn thành IPA, Thì HTTD, 25 từ 'Personal Info'", test: "Mini-test #1", tasks: [
-      { day: "Thứ 2", items: [{ text: "Học bài HTTD (Grammar in Use)", content: "<strong>Thì Hiện Tại Tiếp Diễn (Present Continuous)</strong> dùng để diễn tả hành động đang xảy ra tại thời điểm nói. <br><strong>Cấu trúc:</strong> S + am/is/are + V-ing. <br><strong>Ví dụ:</strong> I am studying for my TOEIC test." }, { text: "Học 10 từ mới (600 Words)" }] },
-      { day: "Thứ 3", items: [{ text: "Luyện âm khó cho người Việt", content: "<strong>Các âm khó:</strong><br>• <strong>/θ/ (think, thank):</strong> Đặt đầu lưỡi giữa hai hàm răng, thổi hơi ra.<br>• <strong>/ð/ (this, that):</strong> Tương tự /θ/ nhưng rung dây thanh quản.<br>• <strong>/ʃ/ (she, wash):</strong> Chu môi, cong lưỡi, thổi hơi ra.<br>• <strong>/tʃ/ (church, watch):</strong> Bật mạnh âm /t/ rồi chuyển sang /ʃ/." }, { text: "Làm BT HTTD (Grammar in Use)" }] },
-      { day: "Thứ 4", items: [{ text: "Nghe playlist 'VOA Level One' (YouTube)", type: "link", url: "https://www.youtube.com/watch?v=WR9_nsLyaEY&list=PLDVFLkhb3siL0jBXp2Ao5tkTTq1B5HBqg&index=1" }, { text: "Học 15 từ mới (600 Words)" }] },
-      { day: "Thứ 5", items: [{ text: "Luyện cặp âm dễ nhầm", content: "<strong>Các cặp âm dễ nhầm:</strong><br>• <strong>/i:/ (sheep) vs /ɪ/ (ship):</strong> Âm /i:/ kéo dài, căng miệng. Âm /ɪ/ ngắn, thả lỏng.<br>• <strong>/s/ (see) vs /z/ (zoo):</strong> Âm /z/ rung dây thanh quản.<br>• <strong>/f/ (fan) vs /v/ (van):</strong> Âm /v/ rung dây thanh quản." }, { text: "Làm BT tổng hợp 2 thì" }] },
-      { day: "Thứ 6", items: [{ text: "Shadowing bài VOA" }, { text: "Ôn 25 từ trên Anki" }] },
-      { day: "Thứ 7", items: [{ text: "Làm Mini-test #1", type: "quiz", id: "Mini-test #1" }, { text: "Sửa chi tiết Test" }] }
+    "week": 2, "phase": 1, "goal": "Hoàn thành Phụ âm IPA, Thì HTTD, 48 từ (Ch. 5-8)", "test": "Mini-test #1", "tasks": [
+      { "day": "Thứ 2", "items": [{ "text": "Học bài HTTD (Grammar in Use)", "content": "<strong>Thì Hiện Tại Tiếp Diễn (Present Continuous)</strong> dùng để diễn tả hành động đang xảy ra tại thời điểm nói. <br><strong>Cấu trúc:</strong> S + am/is/are + V-ing." }, { "text": "Học 24 từ Ch.5 'Conferences' & Ch.6 'Computers' (600 Words)" }] },
+      { "day": "Thứ 3", "items": [{ "text": "Luyện các phụ âm khó cho người Việt", "content": "<strong>Các âm khó:</strong><br>• <strong>/θ/ (think) vs /ð/ (this)</strong><br>• <strong>/ʃ/ (she) vs /tʃ/ (church)</strong>" }, { "text": "Làm BT HTTD (Grammar in Use)" }] },
+      { "day": "Thứ 4", "items": [{ "text": "Nghe playlist 'VOA Level One' (YouTube)", "type": "link", "url": "https://www.youtube.com/watch?v=WR9_nsLyaEY&list=PLDVFLkhb3siL0jBXp2Ao5tkTTq1B5HBqg&index=1" }, { "text": "Học 24 từ Ch.7 'Office Technology' & Ch.8 'Office Procedures' (600 Words)" }] },
+      { "day": "Thứ 5", "items": [{ "text": "Luyện cặp âm dễ nhầm", "content": "<strong>Các cặp âm dễ nhầm:</strong><br>• <strong>/i:/ (sheep) vs /ɪ/ (ship)</strong><br>• <strong>/s/ (see) vs /z/ (zoo)</strong>" }, { "text": "Làm BT tổng hợp 2 thì" }] },
+      { "day": "Thứ 6", "items": [{ "text": "Shadowing bài VOA" }, { "text": "Ôn 48 từ trên Anki" }] },
+      { "day": "Thứ 7", "items": [{ "text": "Làm Mini-test #1", "type": "quiz", "id": "Mini-test #1" }, { "text": "Sửa chi tiết Test" }] }
     ]
   },
   {
-    week: 3, phase: 1, goal: "Nắm vững thì Quá Khứ Đơn, 35 từ 'Work & Office', làm quen Part 1", tasks: [
-      { day: "Thứ 2", items: [{ text: "Học bài QKĐ (Grammar in Use)", content: "<strong>Thì Quá Khứ Đơn (Past Simple)</strong> dùng để diễn tả hành động đã xảy ra và kết thúc trong quá khứ. <br><strong>Cấu trúc:</strong> S + V-ed/V2. <br><strong>Ví dụ:</strong> She visited Paris last year." }, { text: "Học 15 từ 'Work & Office' (600 Words)" }] },
-      { day: "Thứ 3", items: [{ text: "Làm BT QKĐ (Grammar in Use)" }, { text: "Phân tích 5 tranh Part 1 (Very Easy TOEIC)", content: "Tập trung miêu tả hành động chính (Ai đang làm gì?) và đồ vật nổi bật trong tranh." }] },
-      { day: "Thứ 4", items: [{ text: "Học các động từ bất quy tắc (cột 2)" }, { text: "Học 20 từ 'Work & Office' (600 Words)" }] },
-      { day: "Thứ 5", items: [{ text: "Luyện nghe 10 câu Part 1 (Very Easy TOEIC)" }, { text: "Đọc 1 bài báo ngắn trên VOA Special English" }] },
-      { day: "Thứ 6", items: [{ text: "Shadowing 1 đoạn hội thoại ngắn" }, { text: "Ôn 35 từ" }] },
-      { day: "Thứ 7", items: [{ text: "Ôn tập toàn bộ kiến thức tuần" }] }
+    "week": 3, "phase": 1, "goal": "Nắm vững Thì QKĐ, làm quen Part 1, 48 từ (Ch. 9-12)", "tasks": [
+      { "day": "Thứ 2", "items": [{ "text": "Học bài QKĐ (Grammar in Use)", "content": "<strong>Thì Quá Khứ Đơn (Past Simple)</strong> dùng để diễn tả hành động đã xảy ra và kết thúc trong quá khứ. <br><strong>Cấu trúc:</strong> S + V-ed/V2." }, { "text": "Học 24 từ Ch.9 'Electronics' & Ch.10 'Correspondence' (600 Words)" }] },
+      { "day": "Thứ 3", "items": [{ "text": "Làm BT QKĐ (Grammar in Use)" }, { "text": "Phân tích 5 tranh Part 1 (Very Easy TOEIC)", "content": "Tập trung miêu tả hành động chính (Ai đang làm gì?) và đồ vật nổi bật trong tranh." }] },
+      { "day": "Thứ 4", "items": [{ "text": "Học các động từ bất quy tắc (cột 2)" }, { "text": "Học 24 từ Ch.11 'Job Advertising' & Ch.12 'Applying and Interviewing' (600 Words)" }] },
+      { "day": "Thứ 5", "items": [{ "text": "Luyện nghe 10 câu Part 1 (Very Easy TOEIC)" }, { "text": "Đọc 1 bài báo ngắn trên VOA Special English" }] },
+      { "day": "Thứ 6", "items": [{ "text": "Shadowing 1 đoạn hội thoại ngắn" }, { "text": "Ôn 48 từ" }] },
+      { "day": "Thứ 7", "items": [{ "text": "Ôn tập toàn bộ kiến thức tuần" }] }
     ]
   },
   {
-    week: 4, phase: 1, goal: "Nắm vững thì Tương Lai Đơn, 35 từ 'Technology', luyện Part 1", test: "Mini-test #2", tasks: [
-      { day: "Thứ 2", items: [{ text: "Học bài TLĐ (Grammar in Use)", content: "<strong>Thì Tương Lai Đơn (Future Simple)</strong> dùng để diễn tả quyết định tại thời điểm nói, dự đoán không có căn cứ. <br><strong>Cấu trúc:</strong> S + will + V. <br><strong>Ví dụ:</strong> I think it will rain tomorrow." }, { text: "Học 15 từ 'Technology' (600 Words)" }] },
-      { day: "Thứ 3", items: [{ text: "Làm BT TLĐ (Grammar in Use)" }, { text: "Luyện 10 câu Part 1 (Very Easy TOEIC)" }] },
-      { day: "Thứ 4", items: [{ text: "So sánh Will & Be going to (Grammar in Use)" }, { text: "Học 20 từ 'Technology' (600 Words)" }] },
-      { day: "Thứ 5", items: [{ text: "Làm BT tổng hợp các thì" }, { text: "Nghe 10 câu Part 2 (Wh- questions)" }] },
-      { day: "Thứ 6", items: [{ text: "Ôn 35 từ" }, { text: "Shadowing các câu Part 2" }] },
-      { day: "Thứ 7", items: [{ text: "Làm Mini-test #2", type: "quiz", id: "Mini-test #2" }, { text: "Sửa chi tiết Test" }] }
+    "week": 4, "phase": 1, "goal": "Nắm vững Thì TLĐ, luyện Part 1, 48 từ (Ch. 13-16)", "test": "Mini-test #2", "tasks": [
+      { "day": "Thứ 2", "items": [{ "text": "Học bài TLĐ (Grammar in Use)", "content": "<strong>Thì Tương Lai Đơn (Future Simple)</strong> dùng để diễn tả quyết định tại thời điểm nói, dự đoán không có căn cứ. <br><strong>Cấu trúc:</strong> S + will + V." }, { "text": "Học 24 từ Ch.13 'Hiring and Training' & Ch.14 'Salaries and Benefits' (600 Words)" }] },
+      { "day": "Thứ 3", "items": [{ "text": "Làm BT TLĐ (Grammar in Use)" }, { "text": "Luyện 10 câu Part 1 (Very Easy TOEIC)" }] },
+      { "day": "Thứ 4", "items": [{ "text": "So sánh Will & Be going to (Grammar in Use)" }, { "text": "Học 24 từ Ch.15 'Promotions, Pensions, and Awards' & Ch.16 'Shopping' (600 Words)" }] },
+      { "day": "Thứ 5", "items": [{ "text": "Làm BT tổng hợp các thì" }, { "text": "Nghe 10 câu Part 2 (Wh- questions)" }] },
+      { "day": "Thứ 6", "items": [{ "text": "Ôn 48 từ" }, { "text": "Shadowing các câu Part 2" }] },
+      { "day": "Thứ 7", "items": [{ "text": "Làm Mini-test #2", "type": "quiz", "id": "Mini-test #2" }, { "text": "Sửa chi tiết Test" }] }
     ]
   },
   {
-    week: 5, phase: 1, goal: "Học về Danh từ & Tính từ, 50 từ 'Shopping', làm quen Part 5", tasks: [
-      { day: "Thứ 2", items: [{ text: "Học vị trí, chức năng của Danh từ (N) (Grammar in Use)", content: "Danh từ thường đứng đầu câu làm chủ ngữ, sau động từ làm tân ngữ, hoặc sau giới từ." }, { text: "Học 25 từ 'Shopping' (600 Words)" }] },
-      { day: "Thứ 3", items: [{ text: "Học vị trí, chức năng của Tính từ (Adj) (Grammar in Use)", content: "Tính từ thường đứng trước danh từ để bổ nghĩa, hoặc sau động từ 'to be' và các động từ liên kết (linking verbs)." }, { text: "Học 25 từ 'Shopping' (600 Words)" }] },
-      { day: "Thứ 4", items: [{ text: "Làm BT Part 5 (vị trí từ loại N/Adj) (Hacker TOEIC)" }, { text: "Nghe 15 câu Part 2 (Wh-)" }] },
-      { day: "Thứ 5", items: [{ text: "Phân biệt N đếm được & không đếm được (Grammar in Use)" }, { text: "Đọc 1 bài Part 6 ngắn (Very Easy TOEIC)" }] },
-      { day: "Thứ 6", items: [{ text: "Luyện tập Part 2 & 5" }, { text: "Ôn 50 từ" }] },
-      { day: "Thứ 7", items: [{ text: "Ôn tập toàn bộ kiến thức tuần" }] }
+    "week": 5, "phase": 1, "goal": "Học Danh từ & Tính từ, làm quen Part 5, 60 từ (Ch. 17-21)", "tasks": [
+      { "day": "Thứ 2", "items": [{ "text": "Học vị trí, chức năng của Danh từ (N)", "content": "Danh từ thường đứng đầu câu làm chủ ngữ, sau động từ làm tân ngữ, hoặc sau giới từ." }, { "text": "Học 30 từ Ch.17 'Ordering Supplies', Ch.18 'Shipping', Ch.19 (nửa đầu) 'Invoices' (600 Words)" }] },
+      { "day": "Thứ 3", "items": [{ "text": "Học vị trí, chức năng của Tính từ (Adj)", "content": "Tính từ thường đứng trước danh từ để bổ nghĩa, hoặc sau động từ 'to be' và các động từ liên kết." }, { "text": "Học 30 từ Ch.19 (nửa sau), Ch.20 'Inventory', Ch.21 'Banking' (600 Words)" }] },
+      { "day": "Thứ 4", "items": [{ "text": "Làm BT Part 5 (vị trí từ loại N/Adj) (Hacker TOEIC)" }, { "text": "Nghe 15 câu Part 2 (Wh-)" }] },
+      { "day": "Thứ 5", "items": [{ "text": "Phân biệt N đếm được & không đếm được" }, { "text": "Đọc 1 bài Part 6 ngắn (Very Easy TOEIC)" }] },
+      { "day": "Thứ 6", "items": [{ "text": "Luyện tập Part 2 & 5" }, { "text": "Ôn 60 từ" }] },
+      { "day": "Thứ 7", "items": [{ "text": "Ôn tập toàn bộ kiến thức tuần" }] }
     ]
   },
   {
-    week: 6, phase: 1, goal: "Học về Trạng từ & Giới từ, 50 từ 'Food & Dining', luyện Part 2, 5", test: "Mini-test #3", tasks: [
-      { day: "Thứ 2", items: [{ text: "Học vị trí, chức năng của Trạng từ (Adv) (Grammar in Use)", content: "Trạng từ thường bổ nghĩa cho động từ, tính từ, hoặc một trạng từ khác." }, { text: "Học 25 từ 'Food & Dining' (600 Words)" }] },
-      { day: "Thứ 3", items: [{ text: "Học Giới từ chỉ thời gian (in, on, at) (Grammar in Use)" }, { text: "Học 25 từ 'Food & Dining' (600 Words)" }] },
-      { day: "Thứ 4", items: [{ text: "Học Giới từ chỉ nơi chốn (in, on, at) (Grammar in Use)" }, { text: "Làm BT Part 5 (Giới từ) (Hacker)" }] },
-      { day: "Thứ 5", items: [{ text: "Luyện nghe 15 câu Part 2 (Yes/No)" }, { text: "Đọc 1 bài Part 6 (Very Easy TOEIC)" }] },
-      { day: "Thứ 6", items: [{ text: "Ôn 50 từ" }, { text: "Shadowing các câu Part 2" }] },
-      { day: "Thứ 7", items: [{ text: "Làm Mini-test #3", type: "quiz", id: "Mini-test #3" }, { text: "Sửa chi tiết test" }] }
+    "week": 6, "phase": 1, "goal": "Học Trạng từ & Giới từ, luyện Part 2, 5, 60 từ (Ch. 22-26)", "test": "Mini-test #3", "tasks": [
+      { "day": "Thứ 2", "items": [{ "text": "Học vị trí, chức năng của Trạng từ (Adv)", "content": "Trạng từ thường bổ nghĩa cho động từ, tính từ, hoặc một trạng từ khác." }, { "text": "Học 30 từ Ch.22 'Accounting', Ch.23 'Investments', Ch.24 (nửa đầu) 'Taxes' (600 Words)" }] },
+      { "day": "Thứ 3", "items": [{ "text": "Học Giới từ chỉ thời gian (in, on, at)" }, { "text": "Học 30 từ Ch.24 (nửa sau), Ch.25 'Financial Statements', Ch.26 'Property & Departments' (600 Words)" }] },
+      { "day": "Thứ 4", "items": [{ "text": "Học Giới từ chỉ nơi chốn (in, on, at)" }, { "text": "Làm BT Part 5 (Giới từ) (Hacker)" }] },
+      { "day": "Thứ 5", "items": [{ "text": "Luyện nghe 15 câu Part 2 (Yes/No)" }, { "text": "Đọc 1 bài Part 6 (Very Easy TOEIC)" }] },
+      { "day": "Thứ 6", "items": [{ "text": "Ôn 60 từ" }, { "text": "Shadowing các câu Part 2" }] },
+      { "day": "Thứ 7", "items": [{ "text": "Làm Mini-test #3", "type": "quiz", "id": "Mini-test #3" }, { "text": "Sửa chi tiết test" }] }
     ]
   },
   {
-    week: 7, phase: 1, goal: "Học Câu so sánh, 70 từ 'Travel'", tasks: [
-      { day: "Thứ 2", items: [{ text: "Học So sánh bằng (as...as) (Grammar in Use)" }, { text: "Học 25 từ 'Travel' (600 Words)" }] },
-      { day: "Thứ 3", items: [{ text: "Học So sánh hơn (-er than / more...than) (Grammar in Use)" }, { text: "Học 25 từ 'Travel'" }] },
-      { day: "Thứ 4", items: [{ text: "Học So sánh nhất (the -est / the most...) (Grammar in Use)" }, { text: "Học 20 từ 'Travel'" }] },
-      { day: "Thứ 5", items: [{ text: "Làm BT Part 5 về câu so sánh (Hacker)" }, { text: "Nghe 1 đoạn Part 3 ngắn (Hacker)" }] },
-      { day: "Thứ 6", items: [{ text: "Luyện nghe Part 2 (câu hỏi lựa chọn)" }, { text: "Ôn 70 từ" }] },
-      { day: "Thứ 7", items: [{ text: "Ôn tập toàn bộ kiến thức tuần" }] }
+    "week": 7, "phase": 1, "goal": "Học Câu so sánh, 48 từ (Ch. 27-30)", "tasks": [
+      { "day": "Thứ 2", "items": [{ "text": "Học So sánh bằng (as...as)" }, { "text": "Học 24 từ Ch.27 'Board Meetings' & Ch.28 'Quality Control' (600 Words)" }] },
+      { "day": "Thứ 3", "items": [{ "text": "Học So sánh hơn (-er than / more...than)" }, { "text": "Học 24 từ Ch.29 'Product Development' & Ch.30 'Renting and Leasing' (600 Words)" }] },
+      { "day": "Thứ 4", "items": [{ "text": "Học So sánh nhất (the -est / the most...)" }] },
+      { "day": "Thứ 5", "items": [{ "text": "Làm BT Part 5 về câu so sánh (Hacker)" }, { "text": "Nghe 1 đoạn Part 3 ngắn (Hacker)" }] },
+      { "day": "Thứ 6", "items": [{ "text": "Luyện nghe Part 2 (câu hỏi lựa chọn)" }, { "text": "Ôn 48 từ" }] },
+      { "day": "Thứ 7", "items": [{ "text": "Ôn tập toàn bộ kiến thức tuần" }] }
     ]
   },
   {
-    week: 8, phase: 1, goal: "Tổng ôn Câu so sánh, luyện tập", test: "Mini-test #4", tasks: [
-      { day: "Thứ 2", items: [{ text: "Ôn tập so sánh bằng & hơn (Grammar in Use)" }, { text: "Làm 15 câu P5 (Hacker TOEIC)" }] },
-      { day: "Thứ 3", items: [{ text: "Ôn tập so sánh nhất (Grammar in Use)" }, { text: "Làm 15 câu P2 (Hacker)" }] },
-      { day: "Thứ 4", items: [{ text: "Luyện tập các dạng so sánh đặc biệt (so sánh kép...) (Grammar in Use)" }] },
-      { day: "Thứ 5", items: [{ text: "Làm BT tổng hợp so sánh (Hacker)" }, { text: "Shadowing 1 bài P3 ngắn (Hacker)" }] },
-      { day: "Thứ 6", items: [{ text: "Luyện P2, P5 (Hacker)" }, { text: "Nghe 1 đoạn Part 4 ngắn (Hacker)" }] },
-      { day: "Thứ 7", items: [{ text: "Làm Mini-test #4", type: "quiz", id: "Mini-test #4" }, { text: "Sửa chi tiết test" }] }
+    "week": 8, "phase": 1, "goal": "Tổng ôn Câu so sánh, luyện tập, 48 từ (Ch. 31-34)", "test": "Mini-test #4", "tasks": [
+      { "day": "Thứ 2", "items": [{ "text": "Ôn tập so sánh bằng & hơn" }, { "text": "Học 24 từ Ch.31 'Selecting a Restaurant' & Ch.32 'Eating Out' (600 Words)" }] },
+      { "day": "Thứ 3", "items": [{ "text": "Ôn tập so sánh nhất" }, { "text": "Học 24 từ Ch.33 'Making Reservations' & Ch.34 'Airlines' (600 Words)" }] },
+      { "day": "Thứ 4", "items": [{ "text": "Làm BT tổng hợp so sánh (Hacker)" }, { "text": "Làm 15 câu P5 (Hacker TOEIC)" }] },
+      { "day": "Thứ 5", "items": [{ "text": "Shadowing 1 bài P3 ngắn (Hacker)" }, { "text": "Làm 15 câu P2 (Hacker)" }] },
+      { "day": "Thứ 6", "items": [{ "text": "Luyện P2, P5 (Hacker)" }, { "text": "Nghe 1 đoạn Part 4 ngắn (Hacker)" }] },
+      { "day": "Thứ 7", "items": [{ "text": "Làm Mini-test #4", "type": "quiz", "id": "Mini-test #4" }, { "text": "Sửa chi tiết test" }] }
     ]
   },
   {
-    week: 9, phase: 1, goal: "Học Mệnh đề quan hệ, 70 từ 'Health'", tasks: [
-      { day: "Thứ 2", items: [{ text: "Học MĐQH với Who, Which, That (Grammar in Use)" }, { text: "Học 25 từ 'Health' (600 Words)" }] },
-      { day: "Thứ 3", items: [{ text: "Học MĐQH với Whose, When, Where (Grammar in Use)" }, { text: "Học 25 từ 'Health'" }] },
-      { day: "Thứ 4", items: [{ text: "Làm BT Part 5 về MĐQH (Hacker)" }, { text: "Học 20 từ 'Health'" }] },
-      { day: "Thứ 5", items: [{ text: "Làm quen Part 6 (Hacker)" }, { text: "Đọc hiểu 1 đoạn văn P6" }] },
-      { day: "Thứ 6", items: [{ text: "Luyện nghe Part 3 (đoạn ngắn) (Hacker)" }, { text: "Ôn 70 từ" }] },
-      { day: "Thứ 7", items: [{ text: "Ôn tập toàn bộ kiến thức tuần" }] }
+    "week": 9, "phase": 1, "goal": "Học Mệnh đề quan hệ, 60 từ (Ch. 35-39)", "tasks": [
+      { "day": "Thứ 2", "items": [{ "text": "Học MĐQH với Who, Which, That" }, { "text": "Học 30 từ Ch.35 'Traveling', Ch.36 'Hotels', Ch.37 (nửa đầu) 'Sightseeing' (600 Words)" }] },
+      { "day": "Thứ 3", "items": [{ "text": "Học MĐQH với Whose, When, Where" }, { "text": "Học 30 từ Ch.37 (nửa sau), Ch.38 'Car Rentals', Ch.39 'Entertainment' (600 Words)" }] },
+      { "day": "Thứ 4", "items": [{ "text": "Làm BT Part 5 về MĐQH (Hacker)" }] },
+      { "day": "Thứ 5", "items": [{ "text": "Làm quen Part 6 (Hacker)" }, { "text": "Đọc hiểu 1 đoạn văn P6" }] },
+      { "day": "Thứ 6", "items": [{ "text": "Luyện nghe Part 3 (đoạn ngắn) (Hacker)" }, { "text": "Ôn 60 từ" }] },
+      { "day": "Thứ 7", "items": [{ "text": "Ôn tập toàn bộ kiến thức tuần" }] }
     ]
   },
   {
-    week: 10, phase: 1, goal: "Tổng ôn Mệnh đề quan hệ", test: "Mini-test #5", tasks: [
-      { day: "Thứ 2", items: [{ text: "Ôn tập MĐQH Who, Which, That" }, { text: "Luyện 1 đoạn P6 (Hacker TOEIC)" }] },
-      { day: "Thứ 3", items: [{ text: "Ôn tập MĐQH Whose, When, Where" }, { text: "Luyện 1 đoạn P3 (Hacker TOEIC)" }] },
-      { day: "Thứ 4", items: [{ text: "Học Rút gọn Mệnh đề quan hệ (dùng V-ing, V-ed/3)" }] },
-      { day: "Thứ 5", items: [{ text: "Làm BT rút gọn MĐQH (Hacker)" }, { text: "Shadowing 1 bài P3" }] },
-      { day: "Thứ 6", items: [{ text: "Luyện P3, P5, P6" }] },
-      { day: "Thứ 7", items: [{ text: "Làm Mini-test #5", type: "quiz", id: "Mini-test #5" }, { text: "Sửa chi tiết test" }] }
+    "week": 10, "phase": 1, "goal": "Ôn MĐQH, học dạng rút gọn, 60 từ (Ch. 40-44)", "test": "Mini-test #5", "tasks": [
+      { "day": "Thứ 2", "items": [{ "text": "Ôn tập MĐQH Who, Which, That" }, { "text": "Học 30 từ Ch.40 'Movies', Ch.41 'Theater', Ch.42 (nửa đầu) 'Music' (600 Words)" }] },
+      { "day": "Thứ 3", "items": [{ "text": "Ôn tập MĐQH Whose, When, Where" }, { "text": "Học 30 từ Ch.42 (nửa sau), Ch.43 'Museums', Ch.44 'Media' (600 Words)" }] },
+      { "day": "Thứ 4", "items": [{ "text": "Học Rút gọn Mệnh đề quan hệ (dùng V-ing, V-ed/3)" }] },
+      { "day": "Thứ 5", "items": [{ "text": "Làm BT rút gọn MĐQH (Hacker)" }, { "text": "Shadowing 1 bài P3" }] },
+      { "day": "Thứ 6", "items": [{ "text": "Luyện P3, P5, P6" }, { "text": "Ôn 60 từ" }] },
+      { "day": "Thứ 7", "items": [{ "text": "Làm Mini-test #5", "type": "quiz", "id": "Mini-test #5" }, { "text": "Sửa chi tiết test" }] }
     ]
   },
   {
-    week: 11, phase: 1, goal: "Học Câu bị động, 80 từ 'Entertainment'", tasks: [
-      { day: "Thứ 2", items: [{ text: "Học câu bị động các thì cơ bản (HTĐ, QKĐ, TLĐ) (Grammar in Use)" }, { text: "Học 30 từ 'Entertainment' (600 Words)" }] },
-      { day: "Thứ 3", items: [{ text: "Học câu bị động với Modal Verbs (Grammar in Use)" }, { text: "Học 30 từ 'Entertainment'" }] },
-      { day: "Thứ 4", items: [{ text: "Làm BT Part 5 về câu bị động (Hacker)" }, { text: "Học 20 từ 'Entertainment'" }] },
-      { day: "Thứ 5", items: [{ text: "Làm quen Part 4 (bài nói ngắn)" }] },
-      { day: "Thứ 6", items: [{ text: "Luyện nghe 2 bài Part 4 (Hacker TOEIC)" }, { text: "Ôn 80 từ" }] },
-      { day: "Thứ 7", items: [{ text: "Ôn tập toàn bộ kiến thức tuần" }] }
+    "week": 11, "phase": 1, "goal": "Học Câu bị động, 36 từ (Ch. 45-47)", "tasks": [
+      { "day": "Thứ 2", "items": [{ "text": "Học câu bị động các thì cơ bản (HTĐ, QKĐ, TLĐ)" }, { "text": "Học 18 từ Ch.45 'Doctor's Office' & Ch.46 (nửa đầu) 'Dentist's Office' (600 Words)" }] },
+      { "day": "Thứ 3", "items": [{ "text": "Học câu bị động với Modal Verbs" }, { "text": "Học 18 từ Ch.46 (nửa sau) & Ch.47 'Health' (600 Words)" }] },
+      { "day": "Thứ 4", "items": [{ "text": "Làm BT Part 5 về câu bị động (Hacker)" }] },
+      { "day": "Thứ 5", "items": [{ "text": "Làm quen Part 4 (bài nói ngắn)" }, { "text": "Học các dạng bị động đặc biệt" }] },
+      { "day": "Thứ 6", "items": [{ "text": "Luyện nghe 2 bài Part 4 (Hacker TOEIC)" }, { "text": "Ôn 36 từ" }] },
+      { "day": "Thứ 7", "items": [{ "text": "Ôn tập toàn bộ kiến thức tuần" }] }
     ]
   },
   {
-    week: 12, phase: 1, goal: "Tổng ôn Câu bị động", test: "Mini-test #6", tasks: [
-      { day: "Thứ 2", items: [{ text: "Ôn tập câu bị động các thì" }, { text: "Luyện 15 câu P5 (Hacker TOEIC)" }] },
-      { day: "Thứ 3", items: [{ text: "Ôn tập câu bị động với Modal Verbs" }, { text: "Luyện 2 bài P4 (Hacker TOEIC)" }] },
-      { day: "Thứ 4", items: [{ text: "Luyện tập các dạng bị động đặc biệt (với V-ing, to-V)" }] },
-      { day: "Thứ 5", items: [{ text: "Làm BT tổng hợp câu bị động (Hacker)" }, { text: "Shadowing 1 bài P4" }] },
-      { day: "Thứ 6", items: [{ text: "Luyện P4, P5" }] },
-      { day: "Thứ 7", items: [{ text: "Làm Mini-test #6", type: "quiz", id: "Mini-test #6" }, { text: "Sửa chi tiết test" }] }
+    "week": 12, "phase": 1, "goal": "Tổng ôn Câu bị động, Hoàn thành 600 từ (Ch. 48-50)", "test": "Mini-test #6", "tasks": [
+      { "day": "Thứ 2", "items": [{ "text": "Ôn tập câu bị động các thì" }, { "text": "Học 18 từ Ch.48 'Hospitals' & Ch.49 (nửa đầu) 'Pharmacy' (600 Words)" }] },
+      { "day": "Thứ 3", "items": [{ "text": "Ôn tập câu bị động với Modal Verbs" }, { "text": "Học 18 từ Ch.49 (nửa sau) & Ch.50 'Property' (600 Words)" }] },
+      { "day": "Thứ 4", "items": [{ "text": "Luyện 15 câu P5 (Hacker TOEIC)" }, { "text": "Luyện 2 bài P4 (Hacker TOEIC)" }] },
+      { "day": "Thứ 5", "items": [{ "text": "Làm BT tổng hợp câu bị động (Hacker)" }, { "text": "Shadowing 1 bài P4" }] },
+      { "day": "Thứ 6", "items": [{ "text": "Luyện P4, P5" }, { "text": "Ôn 36 từ" }] },
+      { "day": "Thứ 7", "items": [{ "text": "Làm Mini-test #6", "type": "quiz", "id": "Mini-test #6" }, { "text": "Sửa chi tiết test" }] }
     ]
   },
   {
-    week: 13, phase: 1, goal: "Tổng ôn Giai Đoạn 1, Đánh giá năng lực", test: "FULL TEST #1", tasks: [
-      { day: "Thứ 2", items: [{ text: "Xem lại toàn bộ ngữ pháp GĐ1" }] },
-      { day: "Thứ 3", items: [{ text: "Ôn tập ~700 từ vựng đã học" }] },
-      { day: "Thứ 4", items: [{ text: "Xem lại sổ tay lỗi sai từ các mini-test" }] },
-      { day: "Thứ 5", items: [{ text: "Luyện nghe tổng hợp các Part 1-4 (ETS)" }] },
-      { day: "Thứ 6", items: [{ text: "Nghỉ ngơi, chuẩn bị tâm lý" }] },
+    "week": 13, "phase": 1, "goal": "Tổng ôn GĐ1, Đánh giá năng lực", "test": "FULL TEST #1", "tasks": [
+      { "day": "Thứ 2", "items": [{ "text": "Ôn tập toàn bộ 600 từ vựng đã học bằng Anki" }] },
+      { "day": "Thứ 3", "items": [{ "text": "Hệ thống hóa toàn bộ Ngữ pháp GĐ1 bằng Sơ đồ tư duy" }] },
+      { "day": "Thứ 4", "items": [{ "text": "Xem lại sổ tay lỗi sai từ các mini-test" }] },
+      { "day": "Thứ 5", "items": [{ "text": "Luyện nghe tổng hợp các Part 1-4 (ETS)" }] },
+      { "day": "Thứ 6", "items": [{ "text": "Nghỉ ngơi, chuẩn bị tâm lý" }] },
       {
-        day: "Thứ 7", items: [
-          { text: "Làm FULL TEST #1", type: "quiz", id: "FULL TEST #1", content: "Dành 120 phút làm bài nghiêm túc với sách ETS. Sau đó dành thời gian còn lại để sửa lỗi và ghi chép." },
-          { text: "Nhập điểm vào biểu đồ" }
+        "day": "Thứ 7", "items": [
+          { "text": "Làm FULL TEST #1", "type": "quiz", "id": "FULL TEST #1", "content": "Dành 120 phút làm bài nghiêm túc với sách ETS. Sau đó dành thời gian còn lại để sửa lỗi và ghi chép." },
+          { "text": "Nhập điểm vào biểu đồ" }
         ]
       }
     ]
