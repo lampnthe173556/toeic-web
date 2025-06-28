@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lộ Trình Chinh Phục TOEIC 750+ (v16 - Siêu Chi Tiết 56 Tuần)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 50%, #ecfdf5 100%);
+      min-height: 100vh;
+      animation: bgFlow 20s ease-in-out infinite;
+    }
+
+    @keyframes bgFlow {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .main-tab.active {
+      background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+      color: white;
+      border-color: #3b82f6;
+      box-shadow: 0 4px 20px 0 rgba(59, 130, 246, 0.15);
+      transform: translateY(-1px);
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .main-tab {
+      border-radius: 12px;
+      margin: 0 0.25rem;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      font-weight: 600;
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .main-tab:not(.active):hover {
+      background: linear-gradient(90deg, #dbeafe 0%, #bfdbfe 100%);
+      color: #1d4ed8;
+      box-shadow: 0 4px 16px 0 rgba(59, 130, 246, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .week-btn.active {
+      background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 4px 16px 0 rgba(16, 185, 129, 0.2);
+      border: 2px solid #10b981;
+      transform: translateY(-1px);
+      position: relative;
+    }
+
+    .week-btn.active::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #10b981, #3b82f6, #10b981);
+      border-radius: inherit;
+      z-index: -1;
+      opacity: 0.3;
+      animation: borderGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes borderGlow {
+
+      0%,
+      100% {
+        opacity: 0.3;
+      }
+
+      50% {
+        opacity: 0.6;
+      }
+    }
+
+    .week-btn {
+      background: #f8fafc;
+      color: #374151;
+      font-weight: 500;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .week-btn:not(.active):hover {
+      background: linear-gradient(90deg, #ecfdf5 0%, #d1fae5 100%);
+      color: #065f46;
+      box-shadow: 0 4px 12px 0 rgba(16, 185, 129, 0.1);
+      transform: translateY(-1px);
+      border: 2px solid #a7f3d0;
+    }
+
+    .task-list-item input[type="checkbox"] {
+      accent-color: #10b981;
+      width: 1.1rem;
+      height: 1.1rem;
+      border-radius: 4px;
+      border: 2px solid #10b981;
+      transition: all 0.2s ease;
+      margin-right: 0.75rem;
+    }
+
+    .task-list-item input:checked+label span {
+      text-decoration: line-through;
+      color: #6b7280;
+      opacity: 0.7;
+    }
+
+    .task-list-item label span {
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .task-list-item label span:before {
+      content: '✓';
+      color: #10b981;
+      font-size: 1em;
+      margin-right: 0.5em;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .task-list-item input:checked+label span:before {
+      opacity: 1;
+    }
+
+    .timeline-container::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .timeline-container::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 8px;
+    }
+
+    .timeline-container::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, #10b981 0%, #3b82f6 100%);
+      border-radius: 8px;
+    }
+
+    .timeline-container::-webkit-scrollbar-thumb:hover {
+      background: #059669;
+    }
+
+    .modal-overlay {
+      transition: opacity 0.3s ease;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      transition: all 0.3s ease;
+      box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.15);
+      border: 1px solid #e5e7eb;
+      animation: modalSlide 0.3s ease;
+      background: white;
+      border-radius: 16px;
+    }
+
+    @keyframes modalSlide {
+      0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    details>summary {
+      list-style: none;
+    }
+
+    details>summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details[open] summary~* {
+      animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .bg-white,
+    .bg-stone-50 {
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+      transition: all 0.3s ease;
+      background: white;
+      border: 1px solid #f3f4f6;
+    }
+
+    .bg-white:hover,
+    .bg-stone-50:hover {
+      box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.12);
+      transform: translateY(-2px);
+      border: 1px solid #e5e7eb;
+    }
+
+    #overall-progress-bar {
+      box-shadow: 0 2px 8px 0 rgba(16, 185, 129, 0.2);
+      border-radius: 9999px;
+      min-width: 2.5rem;
+      background: linear-gradient(90deg, #10b981 0%, #3b82f6 100%);
+      transition: width 0.8s ease;
+    }
+
+    .chart-container {
+      background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.08);
+      padding: 1.5rem;
+      border: 1px solid #e5e7eb;
+    }
+
+    input[type="number"],
+    input[type="text"] {
+      border: 2px solid #d1d5db;
+      background: #f9fafb;
+      transition: all 0.2s ease;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      padding: 0.6rem 0.8rem;
+    }
+
+    input[type="number"]:focus,
+    input[type="text"]:focus {
+      border: 2px solid #3b82f6;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      outline: none;
+    }
+
+    #add-score-btn {
+      background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+      box-shadow: 0 2px 8px 0 rgba(59, 130, 246, 0.2);
+      transition: all 0.2s ease;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #add-score-btn:hover {
+      background: linear-gradient(90deg, #1d4ed8 0%, #3b82f6 100%);
+      box-shadow: 0 4px 16px 0 rgba(59, 130, 246, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .quiz-btn {
+      background: linear-gradient(90deg, #ecfdf5 0%, #d1fae5 100%);
+      color: #065f46;
+      font-weight: 600;
+      border: 2px solid #10b981;
+      box-shadow: 0 2px 8px 0 rgba(16, 185, 129, 0.15);
+      transition: all 0.2s ease;
+      border-radius: 10px;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    .quiz-btn:before {
+      content: '🎯';
+      font-size: 1.2em;
+      animation: quizPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes quizPulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    .quiz-btn:hover {
+      background: linear-gradient(90deg, #d1fae5 0%, #a7f3d0 100%);
+      color: #047857;
+      box-shadow: 0 4px 16px 0 rgba(16, 185, 129, 0.25);
+      transform: translateY(-1px);
+    }
+
+    .question-block input[type="radio"]:checked+span {
+      color: #1d4ed8;
+      font-weight: 600;
+    }
+
+    .question-block label {
+      transition: all 0.2s ease;
+      border-radius: 8px;
+      padding: 0.5em 0.8em;
+      font-size: 0.95rem;
+    }
+
+    .question-block label:hover {
+      background: #f0f9ff;
+      color: #1d4ed8;
+    }
+
+    .answer-feedback.bg-green-100 {
+      animation: successFade 0.4s ease;
+    }
+
+    .answer-feedback.bg-red-100 {
+      animation: errorFade 0.4s ease;
+    }
+
+    @keyframes successFade {
+      0% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes errorFade {
+      0% {
+        opacity: 0;
+        transform: translateX(-10px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    header {
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.15);
+      padding: 3rem 2rem 2.5rem 2rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #dbeafe;
+      font-weight: 500;
+      margin-top: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    #weekly-detail-view h3 {
+      color: #1d4ed8;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    #weekly-detail-view p strong {
+      color: #065f46;
+      font-weight: 700;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 1.2rem 0.5rem 1rem 0.5rem;
+        border-radius: 12px;
+      }
+
+      header h1 {
+        font-size: 1.3rem;
+        text-align: center;
+      }
+
+      header p {
+        font-size: 0.95rem;
+        text-align: center;
+      }
+
+      .main-tab {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.7rem;
+      }
+
+      .main-tab.active {
+        font-size: 1rem;
+      }
+
+      .week-btn {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.7rem;
+      }
+
+      .bg-white,
+      .bg-stone-50 {
+        padding: 1rem 0.5rem;
+        border-radius: 10px;
+      }
+
+      .chart-container {
+        padding: 0.7rem;
+        border-radius: 10px;
+      }
+
+      #weekly-detail-view .grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.7rem !important;
+      }
+
+      .modal-content {
+        padding: 1rem 0.5rem;
+        border-radius: 10px;
+      }
+
+      #main-content-area {
+        padding: 0 !important;
+      }
+    }
+
+    /* Title color and shadow for harmony */
+    header h1 {
+      color: #fff !important;
+      text-shadow: 0 2px 8px rgba(30, 64, 175, 0.18), 0 0 2px #1d4ed8;
+    }
+  </style>
+</head>
+
+<body class="text-stone-800">
+
+  <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+    <header class="text-center mb-8">
+      <div class="flex items-center justify-center gap-3">
+        <span class="inline-block align-middle transition-transform duration-200 hover:scale-110"
+          style="line-height:0;">
+          <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="7" width="32" height="24" rx="4" fill="#3b82f6" />
+            <rect x="7" y="11" width="24" height="16" rx="2" fill="#fff" />
+            <rect x="10" y="14" width="18" height="2.5" rx="1.2" fill="#a7f3d0" />
+            <rect x="10" y="18" width="12" height="2.5" rx="1.2" fill="#bae6fd" />
+            <rect x="10" y="22" width="8" height="2.5" rx="1.2" fill="#dbeafe" />
+            <rect x="7" y="11" width="24" height="16" rx="2" stroke="#3b82f6" stroke-width="1.5" />
+          </svg>
+        </span>
+        <h1 class="text-3xl md:text-4xl font-bold text-orange-900">Lộ Trình Chinh Phục TOEIC 750+</h1>
+      </div>
+      <p class="text-stone-600 mt-2">Kế hoạch học tập tương tác trong 56 tuần từ mất gốc</p>
+    </header>
+
+    <div id="main-content-area">
+      <!-- Main Tabs -->
+      <div class="flex justify-center border-b-2 border-stone-200 mb-6" id="main-tabs">
+        <button data-view="phase-1"
+          class="main-tab text-sm md:text-base -mb-0.5 px-4 py-3 font-semibold transition-colors duration-300">Giai Đoạn
+          1</button>
+        <button data-view="phase-2"
+          class="main-tab text-sm md:text-base -mb-0.5 px-4 py-3 font-semibold transition-colors duration-300">Giai Đoạn
+          2</button>
+        <button data-view="phase-3"
+          class="main-tab text-sm md:text-base -mb-0.5 px-4 py-3 font-semibold transition-colors duration-300">Giai Đoạn
+          3</button>
+        <button data-view="resources"
+          class="main-tab text-sm md:text-base -mb-0.5 px-4 py-3 font-semibold transition-colors duration-300">Tài Liệu
+          Học Tập</button>
+      </div>
+
+      <!-- Plan View -->
+      <div id="plan-view">
+        <div class="mb-8">
+          <div class="flex items-center justify-between mb-1">
+            <h2 class="text-lg font-semibold text-stone-700 flex items-center gap-2">Tổng quan tiến độ
+              <button id="reset-progress-btn" title="Reset tiến độ"
+                class="ml-2 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-blue-600 hover:bg-red-100 hover:text-red-600 transition text-xl shadow-sm border border-gray-200"><span
+                  style="font-size:1.2em;">&#8635;</span></button>
+            </h2>
+          </div>
+          <div class="w-full bg-stone-200 rounded-full h-5 relative mb-1">
+            <div id="overall-progress-bar"
+              class="bg-gradient-to-r from-blue-400 to-green-400 h-5 rounded-full transition-all duration-500 flex items-center justify-center"
+              style="width: 0%; position:relative;">
+              <span id="progress-percent"
+                style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-weight:800;font-size:1.1rem;color:#fff;text-shadow:0 1px 6px #1d4ed8,0 0 2px #000;">0%</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between mt-1 text-sm text-gray-600">
+            <span id="task-stats"></span>
+          </div>
+        </div>
+
+        <div class="mb-8">
+          <h2 class="text-lg font-semibold text-stone-700 mb-3">Dòng thời gian</h2>
+          <div id="weekly-timeline" class="timeline-container flex overflow-x-auto pb-3 gap-2"></div>
+        </div>
+
+        <div id="weekly-detail-view" class="bg-white p-4 sm:p-6 rounded-2xl shadow-lg min-h-[400px]">
+          <div class="mb-4 flex items-center gap-2 bg-blue-50 rounded-lg px-3 py-2">
+            <span class="text-blue-600 text-xl">🎯</span>
+            <input id="custom-week-goal" type="text" placeholder="Đặt mục tiêu tuần này..."
+              class="border px-3 py-1 rounded-full w-2/3 max-w-xs text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition" />
+            <button id="save-week-goal"
+              class="bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 transition text-sm">Lưu</button>
+            <span id="saved-week-goal" class="ml-2 text-green-700 font-semibold"></span>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-lg">
+            <h2 class="text-xl font-bold text-stone-800 mb-4">Biểu đồ điểm số</h2>
+            <div class="chart-container relative h-64 md:h-80 w-full max-w-2xl mx-auto">
+              <canvas id="scoreChart"></canvas>
+            </div>
+            <div class="mt-4 flex gap-2 justify-center">
+              <input type="number" id="new-score-input" placeholder="Nhập điểm mới..."
+                class="p-2 border rounded-md w-32 text-center">
+              <input type="text" id="test-label-input" placeholder="Tuần/Test"
+                class="p-2 border rounded-md w-24 text-center">
+              <button id="add-score-btn"
+                class="bg-orange-600 text-white font-semibold px-4 py-2 rounded-md hover:bg-orange-700 transition">Thêm
+                điểm</button>
+            </div>
+          </div>
+
+          <div id="quick-links-card" class="bg-white p-4 sm:p-6 rounded-2xl shadow-lg">
+            <h2 class="text-xl font-bold text-stone-800 mb-4">Công cụ & Website</h2>
+            <ul class="space-y-3 text-stone-700">
+              <li class="flex items-start gap-3"><span class="text-xl pt-1">📱</span>
+                <div><strong>Ứng dụng:</strong> Anki (Từ vựng), ELSA Speak (Phát âm), TOEIC Test Pro.</div>
+              </li>
+              <li class="flex items-start gap-3"><span class="text-xl pt-1">🌐</span>
+                <div><strong>Website:</strong> BBC Learning English, VOA, Study4.</div>
+              </li>
+              <li class="flex items-start gap-3"><span class="text-xl pt-1">🎧</span>
+                <div><strong>Luyện Nghe:</strong> Podcast A2-B1, TED-Ed.</div>
+              </li>
+              <li class="flex items-start gap-3"><span class="text-xl pt-1">📝</span>
+                <div><strong>Công cụ:</strong> Nhật ký học tập, Sổ tay lỗi sai.</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resources View -->
+      <div id="resources-view" class="hidden">
+        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+          <h2 class="text-2xl font-bold text-orange-900 mb-6 text-center">Danh Sách Tài Liệu Cần Chuẩn Bị</h2>
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-xl font-semibold text-stone-800 border-b-2 border-amber-500 pb-2 mb-4">Giai Đoạn 1: Xây
+                Nền Tảng (0 - 400+)</h3>
+              <ul class="space-y-4">
+                <li class="p-4 bg-stone-50 rounded-lg">
+                  <p class="font-bold">📚 English Grammar in Use (Raymond Murphy)</p>
+                  <p class="text-sm text-stone-600 mt-1">Sách "kinh điển" về ngữ pháp, giải thích cặn kẽ, có bài tập đi
+                    kèm. Bắt buộc phải có để xây dựng nền tảng ngữ pháp vững chắc.</p>
+                </li>
+                <li class="p-4 bg-stone-50 rounded-lg">
+                  <p class="font-bold">📚 600 Essential Words for the TOEIC</p>
+                  <p class="text-sm text-stone-600 mt-1">Cung cấp 600 từ vựng cốt lõi theo 50 chủ đề thường gặp. Rất
+                    quan trọng để xây dựng vốn từ vựng ban đầu.</p>
+                </li>
+                <li class="p-4 bg-stone-50 rounded-lg">
+                  <p class="font-bold">📚 Very Easy TOEIC / TOEIC Starter</p>
+                  <p class="text-sm text-stone-600 mt-1">Các bộ sách làm quen với cấu trúc đề thi, tốc độ nghe chậm, câu
+                    hỏi đơn giản, phù hợp cho người mới bắt đầu.</p>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-stone-800 border-b-2 border-amber-500 pb-2 mb-4">Giai Đoạn 2: Bứt
+                Phá Kỹ Năng (400 - 650+)</h3>
+              <ul class="space-y-4">
+                <li class="p-4 bg-stone-50 rounded-lg">
+                  <p class="font-bold">📚 Hacker TOEIC (Listening & Reading)</p>
+                  <p class="text-sm text-stone-600 mt-1">Bộ sách cực kỳ mạnh về phân tích chiến thuật, các dạng câu hỏi
+                    và bẫy thường gặp cho từng Part. Rất quan trọng để tăng điểm.</p>
+                </li>
+                <li class="p-4 bg-stone-50 rounded-lg">
+                  <p class="font-bold">📚 Hacker TOEIC Vocabulary (BOCA)</p>
+                  <p class="text-sm text-stone-600 mt-1">Mở rộng vốn từ vựng kinh doanh và học thuật ở mức độ khó hơn,
+                    bổ trợ cho sách 600 Words.</p>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-stone-800 border-b-2 border-amber-500 pb-2 mb-4">Giai Đoạn 3: Luyện
+                Đề Thực Chiến (650 - 750+)</h3>
+              <ul class="space-y-4">
+                <li class="p-4 bg-stone-50 rounded-lg">
+                  <p class="font-bold">📚 ETS TOEIC Test (Bộ đề thi thật)</p>
+                  <p class="text-sm text-stone-600 mt-1">Quan trọng nhất! Đây là bộ đề từ đơn vị ra đề thi, có độ khó và
+                    format sát nhất với thi thật. Bắt buộc phải luyện các bộ mới nhất (2022, 2023...).</p>
+                </li>
+                <li class="p-4 bg-stone-50 rounded-lg">
+                  <p class="font-bold">📚 Hacker TOEIC 1, 2, 3 (Full Test)</p>
+                  <p class="text-sm text-stone-600 mt-1">Bộ đề mô phỏng chất lượng cao, thường khó hơn đề thật một chút,
+                    giúp bạn rèn luyện tâm lý và sức bền.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="test-modal"
+    class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+    <div
+      class="modal-content bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto p-6 md:p-8 transform scale-95">
+      <div class="flex justify-between items-center mb-4">
+        <h2 id="modal-title" class="text-2xl font-bold text-orange-900">Mini Test</h2>
+        <button id="modal-close-btn" class="text-stone-500 hover:text-stone-800 text-3xl">&times;</button>
+      </div>
+      <div id="modal-body" class="space-y-6"></div>
+      <div class="mt-6 text-right">
+        <button id="check-answers-btn"
+          class="bg-green-600 text-white font-semibold px-6 py-2 rounded-md hover:bg-green-700 transition">Kiểm tra đáp
+          án</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const studyPlan = [
+      // Giai đoạn 1 (Tuần 1-13)
+      {
+        week: 1, phase: 1, goal: "Nắm vững 1/2 bảng IPA, Thì Hiện tại Đơn, 25 từ 'Daily Routines'", tasks: [
+          { day: "Thứ 2", items: [{ text: "Học 10 nguyên âm đơn (Vowels)" }, { text: "Học bài HTĐ (Grammar in Use)", content: "<strong>Thì Hiện Tại Đơn (Present Simple)</strong> dùng để diễn tả một thói quen, sự thật hiển nhiên. <br><strong>Cấu trúc:</strong> S + V(s/es). <br><strong>Ví dụ:</strong> He works in an office." }] },
+          { day: "Thứ 3", items: [{ text: "Làm BT Hiện Tại Đơn (Grammar in Use)" }, { text: "Nghe playlist '6 Minute English' (YouTube)", type: "link", url: "https://www.youtube.com/playlist?list=PLcetZ6gSk96-eJc_A2-s6e_iQ4jvywG3q" }] },
+          { day: "Thứ 4", items: [{ text: "Học 25 từ 'Daily Routines' (600 Words)", content: "Học từ vựng trong sách '600 Essential Words for TOEIC'. Nhập vào app Anki để ôn tập hàng ngày." }, { text: "Đọc đoạn văn ngắn" }] },
+          { day: "Thứ 5", items: [{ text: "Học 10 phụ âm (Consonants)" }, { text: "Chép chính tả 5 câu từ bài nghe YouTube" }] },
+          { day: "Thứ 6", items: [{ text: "Shadowing 1 bài", content: "<strong>Kỹ thuật Shadowing (Nói đuổi):</strong> Lắng nghe một đoạn audio ngắn và lặp lại ngay lập tức, cố gắng bắt chước ngữ điệu, nhấn âm và tốc độ của người nói. <br><strong>Nguồn gợi ý:</strong> Dùng lại video trong playlist '6 Minute English' đã nghe." }, { text: "Ôn 25 từ đã học trên Anki" }] },
+          { day: "Thứ 7", items: [{ text: "Ôn lại toàn bộ ngữ pháp & từ vựng tuần" }] }
+        ]
+      },
+      {
+        week: 2, phase: 1, goal: "Hoàn thành IPA, Thì HTTD, 25 từ 'Personal Info'", test: "Mini-test #1", tasks: [
+          { day: "Thứ 2", items: [{ text: "Học bài HTTD (Grammar in Use)", content: "<strong>Thì Hiện Tại Tiếp Diễn (Present Continuous)</strong> dùng để diễn tả hành động đang xảy ra tại thời điểm nói. <br><strong>Cấu trúc:</strong> S + am/is/are + V-ing. <br><strong>Ví dụ:</strong> I am studying for my TOEIC test." }, { text: "Học 10 từ mới (600 Words)" }] },
+          { day: "Thứ 3", items: [{ text: "Luyện âm khó cho người Việt", content: "<strong>Các âm khó:</strong><br>• <strong>/θ/ (think, thank):</strong> Đặt đầu lưỡi giữa hai hàm răng, thổi hơi ra.<br>• <strong>/ð/ (this, that):</strong> Tương tự /θ/ nhưng rung dây thanh quản.<br>• <strong>/ʃ/ (she, wash):</strong> Chu môi, cong lưỡi, thổi hơi ra.<br>• <strong>/tʃ/ (church, watch):</strong> Bật mạnh âm /t/ rồi chuyển sang /ʃ/." }, { text: "Làm BT HTTD (Grammar in Use)" }] },
+          { day: "Thứ 4", items: [{ text: "Nghe playlist 'VOA Level One' (YouTube)", type: "link", url: "https://www.youtube.com/playlist?list=PLpXX1o_wS9hNm2g2-B4a2d4E24s4vS2aW" }, { text: "Học 15 từ mới (600 Words)" }] },
+          { day: "Thứ 5", items: [{ text: "Luyện cặp âm dễ nhầm", content: "<strong>Các cặp âm dễ nhầm:</strong><br>• <strong>/i:/ (sheep) vs /ɪ/ (ship):</strong> Âm /i:/ kéo dài, căng miệng. Âm /ɪ/ ngắn, thả lỏng.<br>• <strong>/s/ (see) vs /z/ (zoo):</strong> Âm /z/ rung dây thanh quản.<br>• <strong>/f/ (fan) vs /v/ (van):</strong> Âm /v/ rung dây thanh quản." }, { text: "Làm BT tổng hợp 2 thì" }] },
+          { day: "Thứ 6", items: [{ text: "Shadowing bài VOA" }, { text: "Ôn 25 từ trên Anki" }] },
+          { day: "Thứ 7", items: [{ text: "Làm Mini-test #1", type: "quiz", id: "Mini-test #1" }, { text: "Sửa chi tiết Test" }] }
+        ]
+      },
+      {
+        week: 3, phase: 1, goal: "Nắm vững thì Quá Khứ Đơn, 35 từ 'Work & Office', làm quen Part 1", tasks: [
+          { day: "Thứ 2", items: [{ text: "Học bài QKĐ (Grammar in Use)", content: "<strong>Thì Quá Khứ Đơn (Past Simple)</strong> dùng để diễn tả hành động đã xảy ra và kết thúc trong quá khứ. <br><strong>Cấu trúc:</strong> S + V-ed/V2. <br><strong>Ví dụ:</strong> She visited Paris last year." }, { text: "Học 15 từ 'Work & Office' (600 Words)" }] },
+          { day: "Thứ 3", items: [{ text: "Làm BT QKĐ (Grammar in Use)" }, { text: "Phân tích 5 tranh Part 1 (Very Easy TOEIC)", content: "Tập trung miêu tả hành động chính (Ai đang làm gì?) và đồ vật nổi bật trong tranh." }] },
+          { day: "Thứ 4", items: [{ text: "Học các động từ bất quy tắc (cột 2)" }, { text: "Học 20 từ 'Work & Office' (600 Words)" }] },
+          { day: "Thứ 5", items: [{ text: "Luyện nghe 10 câu Part 1 (Very Easy TOEIC)" }, { text: "Đọc 1 bài báo ngắn trên VOA Special English" }] },
+          { day: "Thứ 6", items: [{ text: "Shadowing 1 đoạn hội thoại ngắn" }, { text: "Ôn 35 từ" }] },
+          { day: "Thứ 7", items: [{ text: "Ôn tập toàn bộ kiến thức tuần" }] }
+        ]
+      },
+      {
+        week: 4, phase: 1, goal: "Nắm vững thì Tương Lai Đơn, 35 từ 'Technology', luyện Part 1", test: "Mini-test #2", tasks: [
+          { day: "Thứ 2", items: [{ text: "Học bài TLĐ (Grammar in Use)", content: "<strong>Thì Tương Lai Đơn (Future Simple)</strong> dùng để diễn tả quyết định tại thời điểm nói, dự đoán không có căn cứ. <br><strong>Cấu trúc:</strong> S + will + V. <br><strong>Ví dụ:</strong> I think it will rain tomorrow." }, { text: "Học 15 từ 'Technology' (600 Words)" }] },
+          { day: "Thứ 3", items: [{ text: "Làm BT TLĐ (Grammar in Use)" }, { text: "Luyện 10 câu Part 1 (Very Easy TOEIC)" }] },
+          { day: "Thứ 4", items: [{ text: "So sánh Will & Be going to (Grammar in Use)" }, { text: "Học 20 từ 'Technology' (600 Words)" }] },
+          { day: "Thứ 5", items: [{ text: "Làm BT tổng hợp các thì" }, { text: "Nghe 10 câu Part 2 (Wh- questions)" }] },
+          { day: "Thứ 6", items: [{ text: "Ôn 35 từ" }, { text: "Shadowing các câu Part 2" }] },
+          { day: "Thứ 7", items: [{ text: "Làm Mini-test #2", type: "quiz", id: "Mini-test #2" }, { text: "Sửa chi tiết Test" }] }
+        ]
+      },
+      {
+        week: 5, phase: 1, goal: "Học về Danh từ & Tính từ, 50 từ 'Shopping', làm quen Part 5", tasks: [
+          { day: "Thứ 2", items: [{ text: "Học vị trí, chức năng của Danh từ (N) (Grammar in Use)", content: "Danh từ thường đứng đầu câu làm chủ ngữ, sau động từ làm tân ngữ, hoặc sau giới từ." }, { text: "Học 25 từ 'Shopping' (600 Words)" }] },
+          { day: "Thứ 3", items: [{ text: "Học vị trí, chức năng của Tính từ (Adj) (Grammar in Use)", content: "Tính từ thường đứng trước danh từ để bổ nghĩa, hoặc sau động từ 'to be' và các động từ liên kết (linking verbs)." }, { text: "Học 25 từ 'Shopping' (600 Words)" }] },
+          { day: "Thứ 4", items: [{ text: "Làm BT Part 5 (vị trí từ loại N/Adj) (Hacker TOEIC)" }, { text: "Nghe 15 câu Part 2 (Wh-)" }] },
+          { day: "Thứ 5", items: [{ text: "Phân biệt N đếm được & không đếm được (Grammar in Use)" }, { text: "Đọc 1 bài Part 6 ngắn (Very Easy TOEIC)" }] },
+          { day: "Thứ 6", items: [{ text: "Luyện tập Part 2 & 5" }, { text: "Ôn 50 từ" }] },
+          { day: "Thứ 7", items: [{ text: "Ôn tập toàn bộ kiến thức tuần" }] }
+        ]
+      },
+      {
+        week: 6, phase: 1, goal: "Học về Trạng từ & Giới từ, 50 từ 'Food & Dining', luyện Part 2, 5", test: "Mini-test #3", tasks: [
+          { day: "Thứ 2", items: [{ text: "Học vị trí, chức năng của Trạng từ (Adv) (Grammar in Use)", content: "Trạng từ thường bổ nghĩa cho động từ, tính từ, hoặc một trạng từ khác." }, { text: "Học 25 từ 'Food & Dining' (600 Words)" }] },
+          { day: "Thứ 3", items: [{ text: "Học Giới từ chỉ thời gian (in, on, at) (Grammar in Use)" }, { text: "Học 25 từ 'Food & Dining' (600 Words)" }] },
+          { day: "Thứ 4", items: [{ text: "Học Giới từ chỉ nơi chốn (in, on, at) (Grammar in Use)" }, { text: "Làm BT Part 5 (Giới từ) (Hacker)" }] },
+          { day: "Thứ 5", items: [{ text: "Luyện nghe 15 câu Part 2 (Yes/No)" }, { text: "Đọc 1 bài Part 6 (Very Easy TOEIC)" }] },
+          { day: "Thứ 6", items: [{ text: "Ôn 50 từ" }, { text: "Shadowing các câu Part 2" }] },
+          { day: "Thứ 7", items: [{ text: "Làm Mini-test #3", type: "quiz", id: "Mini-test #3" }, { text: "Sửa chi tiết Test" }] }
+        ]
+      },
+      {
+        week: 7, phase: 1, goal: "Học Câu so sánh, 70 từ 'Travel'", tasks: [
+          { day: "Thứ 2", items: [{ text: "Học So sánh bằng (as...as) (Grammar in Use)" }, { text: "Học 25 từ 'Travel' (600 Words)" }] },
+          { day: "Thứ 3", items: [{ text: "Học So sánh hơn (-er than / more...than) (Grammar in Use)" }, { text: "Học 25 từ 'Travel'" }] },
+          { day: "Thứ 4", items: [{ text: "Học So sánh nhất (the -est / the most...) (Grammar in Use)" }, { text: "Học 20 từ 'Travel'" }] },
+          { day: "Thứ 5", items: [{ text: "Làm BT Part 5 về câu so sánh (Hacker)" }, { text: "Nghe 1 đoạn Part 3 ngắn (Hacker)" }] },
+          { day: "Thứ 6", items: [{ text: "Luyện nghe Part 2 (câu hỏi lựa chọn)" }, { text: "Ôn 70 từ" }] },
+          { day: "Thứ 7", items: [{ text: "Ôn tập toàn bộ kiến thức tuần" }] }
+        ]
+      },
+      {
+        week: 8, phase: 1, goal: "Tổng ôn Câu so sánh, luyện tập", test: "Mini-test #4", tasks: [
+          { day: "Thứ 2", items: [{ text: "Ôn tập so sánh bằng & hơn (Grammar in Use)" }, { text: "Làm 15 câu P5 (Hacker TOEIC)" }] },
+          { day: "Thứ 3", items: [{ text: "Ôn tập so sánh nhất (Grammar in Use)" }, { text: "Làm 15 câu P2 (Hacker)" }] },
+          { day: "Thứ 4", items: [{ text: "Luyện tập các dạng so sánh đặc biệt (so sánh kép...) (Grammar in Use)" }] },
+          { day: "Thứ 5", items: [{ text: "Làm BT tổng hợp so sánh (Hacker)" }, { text: "Shadowing 1 bài P3 ngắn (Hacker)" }] },
+          { day: "Thứ 6", items: [{ text: "Luyện P2, P5 (Hacker)" }, { text: "Nghe 1 đoạn Part 4 ngắn (Hacker)" }] },
+          { day: "Thứ 7", items: [{ text: "Làm Mini-test #4", type: "quiz", id: "Mini-test #4" }, { text: "Sửa chi tiết test" }] }
+        ]
+      },
+      {
+        week: 9, phase: 1, goal: "Học Mệnh đề quan hệ, 70 từ 'Health'", tasks: [
+          { day: "Thứ 2", items: [{ text: "Học MĐQH với Who, Which, That (Grammar in Use)" }, { text: "Học 25 từ 'Health' (600 Words)" }] },
+          { day: "Thứ 3", items: [{ text: "Học MĐQH với Whose, When, Where (Grammar in Use)" }, { text: "Học 25 từ 'Health'" }] },
+          { day: "Thứ 4", items: [{ text: "Làm BT Part 5 về MĐQH (Hacker)" }, { text: "Học 20 từ 'Health'" }] },
+          { day: "Thứ 5", items: [{ text: "Làm quen Part 6 (Hacker)" }, { text: "Đọc hiểu 1 đoạn văn P6" }] },
+          { day: "Thứ 6", items: [{ text: "Luyện nghe Part 3 (đoạn ngắn) (Hacker)" }, { text: "Ôn 70 từ" }] },
+          { day: "Thứ 7", items: [{ text: "Ôn tập toàn bộ kiến thức tuần" }] }
+        ]
+      },
+      {
+        week: 10, phase: 1, goal: "Tổng ôn Mệnh đề quan hệ", test: "Mini-test #5", tasks: [
+          { day: "Thứ 2", items: [{ text: "Ôn tập MĐQH Who, Which, That" }, { text: "Luyện 1 đoạn P6 (Hacker TOEIC)" }] },
+          { day: "Thứ 3", items: [{ text: "Ôn tập MĐQH Whose, When, Where" }, { text: "Luyện 1 đoạn P3 (Hacker TOEIC)" }] },
+          { day: "Thứ 4", items: [{ text: "Học Rút gọn Mệnh đề quan hệ (dùng V-ing, V-ed/3)" }] },
+          { day: "Thứ 5", items: [{ text: "Làm BT rút gọn MĐQH (Hacker)" }, { text: "Shadowing 1 bài P3" }] },
+          { day: "Thứ 6", items: [{ text: "Luyện P3, P5, P6" }] },
+          { day: "Thứ 7", items: [{ text: "Làm Mini-test #5", type: "quiz", id: "Mini-test #5" }, { text: "Sửa chi tiết test" }] }
+        ]
+      },
+      {
+        week: 11, phase: 1, goal: "Học Câu bị động, 80 từ 'Entertainment'", tasks: [
+          { day: "Thứ 2", items: [{ text: "Học câu bị động các thì cơ bản (HTĐ, QKĐ, TLĐ) (Grammar in Use)" }, { text: "Học 30 từ 'Entertainment' (600 Words)" }] },
+          { day: "Thứ 3", items: [{ text: "Học câu bị động với Modal Verbs (Grammar in Use)" }, { text: "Học 30 từ 'Entertainment'" }] },
+          { day: "Thứ 4", items: [{ text: "Làm BT Part 5 về câu bị động (Hacker)" }, { text: "Học 20 từ 'Entertainment'" }] },
+          { day: "Thứ 5", items: [{ text: "Làm quen Part 4 (bài nói ngắn)" }] },
+          { day: "Thứ 6", items: [{ text: "Luyện nghe 2 bài Part 4 (Hacker TOEIC)" }, { text: "Ôn 80 từ" }] },
+          { day: "Thứ 7", items: [{ text: "Ôn tập toàn bộ kiến thức tuần" }] }
+        ]
+      },
+      {
+        week: 12, phase: 1, goal: "Tổng ôn Câu bị động", test: "Mini-test #6", tasks: [
+          { day: "Thứ 2", items: [{ text: "Ôn tập câu bị động các thì" }, { text: "Luyện 15 câu P5 (Hacker TOEIC)" }] },
+          { day: "Thứ 3", items: [{ text: "Ôn tập câu bị động với Modal Verbs" }, { text: "Luyện 2 bài P4 (Hacker TOEIC)" }] },
+          { day: "Thứ 4", items: [{ text: "Luyện tập các dạng bị động đặc biệt (với V-ing, to-V)" }] },
+          { day: "Thứ 5", items: [{ text: "Làm BT tổng hợp câu bị động (Hacker)" }, { text: "Shadowing 1 bài P4" }] },
+          { day: "Thứ 6", items: [{ text: "Luyện P4, P5" }] },
+          { day: "Thứ 7", items: [{ text: "Làm Mini-test #6", type: "quiz", id: "Mini-test #6" }, { text: "Sửa chi tiết test" }] }
+        ]
+      },
+      {
+        week: 13, phase: 1, goal: "Tổng ôn Giai Đoạn 1, Đánh giá năng lực", test: "FULL TEST #1", tasks: [
+          { day: "Thứ 2", items: [{ text: "Xem lại toàn bộ ngữ pháp GĐ1" }] },
+          { day: "Thứ 3", items: [{ text: "Ôn tập ~700 từ vựng đã học" }] },
+          { day: "Thứ 4", items: [{ text: "Xem lại sổ tay lỗi sai từ các mini-test" }] },
+          { day: "Thứ 5", items: [{ text: "Luyện nghe tổng hợp các Part 1-4 (ETS)" }] },
+          { day: "Thứ 6", items: [{ text: "Nghỉ ngơi, chuẩn bị tâm lý" }] },
+          { day: "Thứ 7", items: [{ text: "Làm FULL TEST #1", content: "Dành 120 phút làm bài nghiêm túc với sách ETS. Sau đó dành thời gian còn lại để sửa lỗi và ghi chép." }, { text: "Nhập điểm vào biểu đồ" }] }
+        ]
+      },
+
+      // Giai đoạn 2 (Tuần 14 - 35)
+      ...Array.from({ length: 22 }, (_, i) => {
+        const weekNum = i + 14;
+        let goal, testId = null;
+        if (weekNum % 2 !== 0 && weekNum < 36) testId = `Mini-test #${Math.ceil(weekNum / 2)}`;
+        if (weekNum % 4 === 1 && weekNum > 13 && weekNum < 36) testId = `FULL TEST #${Math.floor(weekNum / 4)}`;
+
+        if (weekNum <= 17) goal = "Master Part 1, 2 & 5";
+        else if (weekNum <= 22) goal = "Master Part 3 & 6";
+        else if (weekNum <= 28) goal = "Master Part 4 & Part 7 (Single Passages)";
+        else goal = "Master Part 7 (Double & Triple Passages)";
+
+        return {
+          week: weekNum, phase: 2, goal: goal, test: testId, tasks: [
+            { day: "Thứ 2", items: [{ text: "Học chiến thuật Part chính (Hacker)" }, { text: "Luyện 15 câu" }] },
+            { day: "Thứ 3", items: [{ text: "Phân tích bẫy & lỗi sai" }, { text: "Học 25 từ (Hacker BOCA)" }] },
+            { day: "Thứ 4", items: [{ text: "Luyện tập Part chính (ETS)" }, { text: "Học 25 từ" }] },
+            { day: "Thứ 5", items: [{ text: "Học chiến thuật Part phụ (Hacker)" }, { text: "Luyện 15 câu" }] },
+            { day: "Thứ 6", items: [{ text: "Luyện tập tổng hợp các Part đã học" }, { text: "Ôn từ vựng tuần" }] },
+            { day: "Thứ 7", items: testId ? [{ text: testId.includes("FULL") ? "Làm FULL TEST" : `Làm ${testId}`, type: testId.startsWith("Mini") ? "quiz" : "info", id: testId }] : [{ text: "Sửa lỗi sai & Tổng kết tuần" }] }
+          ]
+        };
+      }),
+
+      // Giai đoạn 3 (Tuần 36 - 56)
+      ...Array.from({ length: 21 }, (_, i) => {
+        const weekNum = i + 36;
+        return {
+          week: weekNum, phase: 3, goal: `Luyện đề & Tối ưu hóa`, test: `FULL TEST #${Math.floor(weekNum / 4)}`, tasks: [
+            { day: "Thứ 2", items: [{ text: "Làm Full Test (ETS)" }] },
+            { day: "Thứ 3", items: [{ text: "Sửa chi tiết phần Listening" }, { text: "Ghi lại lỗi sai & từ vựng" }] },
+            { day: "Thứ 4", items: [{ text: "Sửa chi tiết phần Reading" }, { text: "Hệ thống hóa ngữ pháp sai" }] },
+            { day: "Thứ 5", items: [{ text: "Luyện tập lại các câu sai" }, { text: "Ôn lại từ vựng đã ghi" }] },
+            { day: "Thứ 6", items: [{ text: "Làm một Mini Test (100 câu) từ sách Hacker" }] },
+            { day: "Thứ 7", items: [{ text: "Nghỉ ngơi hoặc học nhẹ (nghe podcast)" }] }
+          ]
+        };
+      }),
+    ];
+
+    const miniTests = {
+      "Mini-test #1": {
+        title: "Mini-test #1: Thì Hiện Tại Đơn & Tiếp Diễn (20 câu)", questions: [
+          { q: "1. She often ______ to the library to read books.", options: ["go", "goes", "is going", "are going"], answer: 1 },
+          { q: "2. Look! The children ______ in the yard.", options: ["play", "plays", "is playing", "are playing"], answer: 3 },
+          { q: "3. What ______ you ______ right now?", options: ["do, do", "are, doing", "do, doing", "are, do"], answer: 1 },
+          { q: "4. Water ______ at 100 degrees Celsius.", options: ["boil", "is boiling", "boils", "boiling"], answer: 2 },
+          { q: "5. My flight to Hanoi ______ at 8 AM tomorrow.", options: ["leave", "is leaving", "leaves", "left"], answer: 2 },
+          { q: "6. He ______ coffee, he prefers tea.", options: ["don't like", "doesn't like", "isn't like", "not like"], answer: 1 },
+          { q: "7. Why ______ you wearing a coat? It's not cold.", options: ["do", "does", "are", "is"], answer: 2 },
+          { q: "8. I ______ to the gym three times a week.", options: ["go", "am going", "goes", "is going"], answer: 0 },
+          { q: "9. Please be quiet. The baby ______.", options: ["sleeps", "is sleeping", "sleep", "are sleeping"], answer: 1 },
+          { q: "10. The sun ______ in the east.", options: ["rises", "is rising", "rose", "has risen"], answer: 0 },
+          { q: "11. He usually ______ his emails in the morning.", options: ["check", "is checking", "checks", "are checking"], answer: 2 },
+          { q: "12. At the moment, they ______ for their exam.", options: ["study", "studies", "is studying", "are studying"], answer: 3 },
+          { q: "13. How often ______ your grandparents?", options: ["do you visit", "are you visiting", "you visit", "does you visit"], answer: 0 },
+          { q: "14. My sister ______ as a teacher in a primary school.", options: ["work", "works", "is working", "are working"], answer: 1 },
+          { q: "15. Turn off the TV. Nobody ______ it.", options: ["watches", "watch", "is watching", "are watching"], answer: 2 },
+          { q: "16. John ______ to music now.", options: ["listens", "is listening", "listen", "are listening"], answer: 1 },
+          { q: "17. The company ______ a new branch next month.", options: ["opens", "open", "is opening", "are opening"], answer: 2 },
+          { q: "18. We ______ English at this time every Tuesday.", options: ["have", "has", "are having", "is having"], answer: 0 },
+          { q: "19. Be careful! The floor ______ wet.", options: ["is", "are", "be", "being"], answer: 0 },
+          { q: "20. She never ______ late for work.", options: ["is", "are", "be", "does be"], answer: 0 },
+        ]
+      },
+      "Mini-test #2": {
+        title: "Mini-test #2: Thì Quá Khứ & Tương Lai (20 câu)", questions: [
+          { q: "1. I ______ a very interesting movie last night.", options: ["see", "saw", "will see", "am seeing"], answer: 1 },
+          { q: "2. They ______ to Da Nang for their vacation next summer.", options: ["travel", "traveled", "will travel", "are traveling"], answer: 2 },
+          { q: "3. What time ______ you ______ home yesterday?", options: ["did, get", "do, get", "will, get", "were, getting"], answer: 0 },
+          { q: "4. He ______ for the company for ten years before he retired.", options: ["works", "worked", "has worked", "will work"], answer: 1 },
+          { q: "5. I promise I ______ you with your homework.", options: ["help", "helped", "will help", "am helping"], answer: 2 },
+          { q: "6. When I arrived, they ______ dinner.", options: ["had", "were having", "will have", "have"], answer: 1 },
+          { q: "7. The train ______ in five minutes. We should hurry.", options: ["will leave", "left", "leaves", "is leaving"], answer: 3 },
+          { q: "8. He ______ a new car last month.", options: ["buys", "bought", "will buy", "is buying"], answer: 1 },
+          { q: "9. Perhaps we ______ to the beach this weekend.", options: ["go", "went", "will go", "are going"], answer: 2 },
+          { q: "10. While I was studying, my phone ______.", options: ["rings", "rang", "was ringing", "will ring"], answer: 1 },
+          { q: "11. Look at those dark clouds! It ______.", options: ["will rain", "rains", "is going to rain", "rained"], answer: 2 },
+          { q: "12. He didn't ______ to the party last Saturday.", options: ["go", "went", "goes", "going"], answer: 0 },
+          { q: "13. This time next week, I ______ on a beach in Thailand.", options: ["will lie", "am lying", "will be lying", "lie"], answer: 2 },
+          { q: "14. She ______ him a letter two days ago.", options: ["sends", "sent", "was sending", "will send"], answer: 1 },
+          { q: "15. I think the new project ______ a success.", options: ["is", "was", "will be", "is going to be"], answer: 2 },
+          { q: "16. By 2030, scientists ______ a cure for this disease.", options: ["will find", "will have found", "found", "are finding"], answer: 1 },
+          { q: "17. What ______ you do if you won the lottery?", options: ["will", "would", "do", "did"], answer: 1 },
+          { q: "18. The concert ______ at 7 PM.", options: ["started", "starts", "will start", "is starting"], answer: 0 },
+          { q: "19. We ______ to the museum yesterday.", options: ["go", "went", "have gone", "will go"], answer: 1 },
+          { q: "20. Don't call me at 9 PM. I ______ a meeting.", options: ["will have", "am having", "will be having", "had"], answer: 2 },
+        ]
+      },
+      "Mini-test #3": {
+        title: "Mini-test #3: Từ loại (N, Adj, Adv) (20 câu)", questions: [
+          { q: "1. The company is looking for a ______ candidate.", options: ["qualify", "qualification", "qualified", "qualifying"], answer: 2 },
+          { q: "2. He drives his car very ______, so he has never had an accident.", options: ["careful", "careless", "carefully", "care"], answer: 2 },
+          { q: "3. We need to make a ______ soon.", options: ["decide", "decision", "decisive", "decisively"], answer: 1 },
+          { q: "4. The new policy will be ______ for all employees.", options: ["benefit", "beneficial", "beneficially", "beneficiary"], answer: 1 },
+          { q: "5. The ______ of the new product was a great success.", options: ["introduce", "introduction", "introductory", "introducing"], answer: 1 },
+          { q: "6. She handled the situation very ______. ", options: ["profession", "professional", "professionally", "professor"], answer: 2 },
+          { q: "7. The ______ of this machine is very simple.", options: ["operate", "operation", "operational", "operator"], answer: 1 },
+          { q: "8. It is ______ to double-check your work.", options: ["advise", "advice", "advisable", "advisably"], answer: 2 },
+          { q: "9. The instructions were not very ______. ", options: ["clear", "clarity", "clearly", "clarify"], answer: 0 },
+          { q: "10. He is a very ______ and experienced manager.", options: ["rely", "reliable", "reliability", "reliably"], answer: 1 },
+          { q: "11. The company has seen ______ growth this year.", options: ["consider", "consideration", "considerable", "considerably"], answer: 2 },
+          { q: "12. Please complete the application form ______. ", options: ["careful", "careless", "care", "carefully"], answer: 3 },
+          { q: "13. The ______ for the position must have a degree in marketing.", options: ["apply", "applicant", "application", "applicable"], answer: 1 },
+          { q: "14. We were ______ with the results of the survey.", options: ["satisfy", "satisfaction", "satisfactory", "satisfied"], answer: 3 },
+          { q: "15. Your ______ is required on this document.", options: ["sign", "signal", "signature", "signer"], answer: 2 },
+          { q: "16. He gave a ______ speech at the conference.", options: ["power", "powerful", "powerfully", "empower"], answer: 1 },
+          { q: "17. The ______ of the staff is essential for the company's success.", options: ["create", "creative", "creativity", "creator"], answer: 2 },
+          { q: "18. The information is strictly ______. ", options: ["confide", "confidence", "confidential", "confidently"], answer: 2 },
+          { q: "19. The two companies announced their ______ last month.", options: ["partner", "partnership", "partnering", "partnered"], answer: 1 },
+          { q: "20. You need to be more ______ about your work.", options: ["system", "systematic", "systematically", "systemize"], answer: 1 },
+        ]
+      },
+      // Remaining tests can be expanded similarly...
+    };
+
+
+    let currentState = {
+      view: 'phase-1', // 'phase-1', 'phase-2', 'phase-3', 'resources'
+      week: 1,
+      completedTasks: JSON.parse(localStorage.getItem('toeic750_completedTasks_v14')) || {},
+      scores: JSON.parse(localStorage.getItem('toeic750_scores_v14')) || { labels: [], data: [] }
+    };
+
+    const phaseSelector = document.getElementById('main-tabs');
+    const weeklyTimeline = document.getElementById('weekly-timeline');
+    const weeklyDetailView = document.getElementById('weekly-detail-view');
+    const overallProgressBar = document.getElementById('overall-progress-bar');
+    const modal = document.getElementById('test-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    const checkAnswersBtn = document.getElementById('check-answers-btn');
+    const planView = document.getElementById('plan-view');
+    const resourcesView = document.getElementById('resources-view');
+
+    const phases = [
+      { id: 1, name: "Giai Đoạn 1" },
+      { id: 2, name: "Giai Đoạn 2" },
+      { id: 3, name: "Giai Đoạn 3" }
+    ];
+
+    function renderTabs() {
+      document.querySelectorAll('.main-tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      const activeTab = document.querySelector(`.main-tab[data-view="${currentState.view}"]`);
+      if (activeTab) {
+        activeTab.classList.add('active');
+      }
+    }
+
+    function switchView() {
+      renderTabs();
+      if (currentState.view === 'resources') {
+        planView.classList.add('hidden');
+        resourcesView.classList.remove('hidden');
+      } else {
+        planView.classList.remove('hidden');
+        resourcesView.classList.add('hidden');
+        const phaseId = parseInt(currentState.view.split('-')[1]);
+        renderWeeklyTimeline(phaseId);
+        renderWeeklyDetailView();
+      }
+    }
+
+    function renderWeeklyTimeline(phaseId) {
+      const weeksInPhase = studyPlan.filter(w => w.phase === phaseId);
+      weeklyTimeline.innerHTML = weeksInPhase.map(w => `<button data-week="${w.week}" class="week-btn flex-shrink-0 px-4 py-2 rounded-md transition-colors duration-200 ${currentState.week === w.week ? 'active' : 'bg-stone-200 hover:bg-stone-300'}">Tuần ${w.week}</button>`).join('');
+      const activeButton = weeklyTimeline.querySelector(`.week-btn.active`);
+      if (activeButton) activeButton.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+
+    function renderWeeklyDetailView() {
+      const weekData = studyPlan.find(w => w.week === currentState.week);
+      if (!weekData) return;
+
+      const tasksHtml = weekData.tasks.map(day => {
+        const dayKey = `${weekData.week}-${day.day}`;
+        return `
+                    <div class="bg-stone-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-orange-800">${day.day}</h4>
+                        <ul class="mt-2 space-y-3 task-list">
+                            ${day.items.map((item, index) => {
+          const taskId = `${dayKey}-${index}`;
+          if (item.type === 'quiz' || item.type === 'info') {
+            return `<li><button data-quiz-id="${item.id}" class="quiz-btn w-full text-left bg-amber-200 text-amber-800 font-bold p-3 rounded-md hover:bg-amber-300 transition">🎯 ${item.text}</button></li>`;
+          }
+          let itemHtml = `<div class="flex items-start"><input type="checkbox" id="${taskId}" data-task-id="${taskId}" class="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500 mr-3 mt-1 flex-shrink-0" ${currentState.completedTasks[taskId] ? 'checked' : ''}><label for="${taskId}" class="flex-grow"><span>${item.text}</span></label></div>`;
+
+          if (item.type === 'link') {
+            itemHtml = `<div class="flex items-start"><input type="checkbox" id="${taskId}" data-task-id="${taskId}" class="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-500 mr-3 mt-1 flex-shrink-0" ${currentState.completedTasks[taskId] ? 'checked' : ''}><label for="${taskId}" class="flex-grow"><a href="${item.url}" target="_blank" class="text-blue-600 hover:underline"><span>${item.text} 🔗</span></a></label></div>`;
+          }
+
+          const contentHtml = item.content ? `<details class="mt-2 ml-7"><summary class="cursor-pointer text-sm font-semibold text-orange-700 hover:underline">Xem hướng dẫn</summary><div class="mt-2 p-3 bg-white rounded-md border text-sm text-stone-600">${item.content}</div></details>` : '';
+          return `<li class="task-list-item">${itemHtml}${contentHtml}</li>`;
+        }).join('')}
+                        </ul>
+                    </div>`;
+      }).join('');
+
+      weeklyDetailView.innerHTML = `<div class="mb-4"><h3 class="text-xl md:text-2xl font-bold text-orange-900">Tuần ${weekData.week}</h3><p class="text-stone-600 mt-1"><strong>Mục tiêu:</strong> ${weekData.goal}</p></div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">${tasksHtml}</div>`;
+    }
+
+    function updateOverallProgress() {
+      const totalTasks = studyPlan.reduce((acc, week) => acc + week.tasks.reduce((dayAcc, day) => dayAcc + day.items.length, 0), 0);
+      const completedCount = Object.keys(currentState.completedTasks).length;
+      const progress = totalTasks > 0 ? (completedCount / totalTasks) * 100 : 0;
+      overallProgressBar.style.setProperty('--progress-width', `${progress}%`);
+      overallProgressBar.style.width = `${progress}%`;
+      // Đổi màu chữ nếu bar nhỏ
+      const percentEl = document.getElementById('progress-percent');
+      percentEl.textContent = `${Math.round(progress)}%`;
+      if (progress < 8) {
+        percentEl.style.color = '#1d4ed8';
+        percentEl.style.textShadow = '0 1px 6px #fff,0 0 2px #000';
+      } else {
+        percentEl.style.color = '#fff';
+        percentEl.style.textShadow = '0 1px 6px #1d4ed8,0 0 2px #000';
+      }
+      document.getElementById('task-stats').textContent = `${completedCount} / ${totalTasks} nhiệm vụ đã hoàn thành`;
+    }
+
+    function handleTabClick(e) {
+      const button = e.target.closest('.main-tab');
+      if (button) {
+        const view = button.dataset.view;
+        currentState.view = view;
+        if (view.startsWith('phase')) {
+          const phaseId = parseInt(view.split('-')[1]);
+          // If we are switching to a new phase, set the week to the first week of that phase
+          const firstWeekOfPhase = studyPlan.find(w => w.phase === phaseId).week;
+          if (studyPlan.find(w => w.week === currentState.week).phase !== phaseId) {
+            currentState.week = firstWeekOfPhase;
+          }
+        }
+        switchView();
+      }
+    }
+
+    function handleWeekClick(e) {
+      if (e.target.matches('.week-btn')) {
+        currentState.week = parseInt(e.target.dataset.week);
+        renderWeeklyDetailView();
+        // Also update the active state on the timeline
+        document.querySelectorAll('.week-btn').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+      }
+    }
+
+    function handleTaskToggle(e) {
+      if (e.target.matches('input[type="checkbox"]')) {
+        const taskId = e.target.dataset.taskId;
+        currentState.completedTasks[taskId] = e.target.checked;
+        if (!e.target.checked) delete currentState.completedTasks[taskId];
+        saveData();
+        updateOverallProgress();
+      } else if (e.target.matches('.quiz-btn')) {
+        openTestModal(e.target.dataset.quizId);
+      }
+    }
+
+    function openTestModal(quizId) {
+      const testData = miniTests[quizId];
+      checkAnswersBtn.style.display = 'block';
+
+      if (!testData) {
+        modalTitle.textContent = "Hướng dẫn làm bài";
+        modalBody.innerHTML = `<p>Nội dung cho bài kiểm tra này sẽ sớm được cập nhật. Hiện tại, bạn hãy tìm một bộ đề thi thử (ví dụ: ETS TOEIC) và làm bài trong điều kiện thi thật (120 phút).</p>`;
+        checkAnswersBtn.style.display = 'none';
+      } else {
+        modalTitle.textContent = testData.title;
+        modalBody.innerHTML = testData.questions.map((q, index) => `<div class="question-block" data-answer="${q.answer}"><p class="font-semibold">${index + 1}. ${q.q}</p><div class="mt-2 space-y-1">${q.options.map((opt, optIndex) => `<label class="flex items-center p-2 rounded-md border border-stone-200 hover:bg-stone-50 cursor-pointer"><input type="radio" name="q${index}" value="${optIndex}" class="mr-3"><span>${opt}</span></label>`).join('')}</div><div class="answer-feedback hidden mt-2 p-2 text-sm rounded-md"></div></div>`).join('');
+      }
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function checkAnswers() {
+      modalBody.querySelectorAll('.question-block').forEach(block => {
+        const correctAnswerIndex = parseInt(block.dataset.answer);
+        const userAnswer = block.querySelector('input[type="radio"]:checked');
+        const feedbackEl = block.querySelector('.answer-feedback');
+        feedbackEl.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+        if (userAnswer && parseInt(userAnswer.value) === correctAnswerIndex) {
+          feedbackEl.textContent = `Chính xác!`;
+          feedbackEl.classList.add('bg-green-100', 'text-green-800');
+          feedbackEl.style.animation = 'correctShake 0.4s';
+          setTimeout(() => feedbackEl.style.animation = '', 400);
+        } else {
+          const correctAnswerText = block.querySelectorAll('span')[correctAnswerIndex].textContent;
+          feedbackEl.textContent = `Sai rồi. Đáp án đúng là: "${correctAnswerText}"`;
+          feedbackEl.classList.add('bg-red-100', 'text-red-800');
+          feedbackEl.style.animation = 'wrongShake 0.4s';
+          setTimeout(() => feedbackEl.style.animation = '', 400);
+        }
+      });
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    function saveData() {
+      localStorage.setItem('toeic750_completedTasks_v14', JSON.stringify(currentState.completedTasks));
+      localStorage.setItem('toeic750_scores_v14', JSON.stringify(currentState.scores));
+    }
+
+    function init() {
+      phaseSelector.addEventListener('click', handleTabClick);
+      weeklyTimeline.addEventListener('click', handleWeekClick);
+      weeklyDetailView.addEventListener('click', handleTaskToggle);
+      modalCloseBtn.addEventListener('click', closeModal);
+      checkAnswersBtn.addEventListener('click', checkAnswers);
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+      document.getElementById('add-score-btn').addEventListener('click', () => {
+        const newScore = document.getElementById('new-score-input').value;
+        const testLabel = document.getElementById('test-label-input').value;
+        if (newScore && testLabel) {
+          currentState.scores.labels.push(testLabel);
+          currentState.scores.data.push(parseInt(newScore));
+          scoreChart.update();
+          saveData();
+          document.getElementById('new-score-input').value = '';
+          document.getElementById('test-label-input').value = '';
+        }
+      });
+      // Reset progress
+      document.getElementById('reset-progress-btn').addEventListener('click', () => {
+        if (confirm('Bạn có chắc chắn muốn xóa toàn bộ tiến độ?')) {
+          currentState.completedTasks = {};
+          saveData();
+          updateOverallProgress();
+          renderWeeklyDetailView();
+        }
+      });
+      // Custom week goal
+      const weekGoalInput = document.getElementById('custom-week-goal');
+      const saveWeekGoalBtn = document.getElementById('save-week-goal');
+      const savedWeekGoal = document.getElementById('saved-week-goal');
+      // Load goal if exists
+      function loadWeekGoal() {
+        const key = `toeic750_weekGoal_${currentState.week}`;
+        const val = localStorage.getItem(key);
+        if (val) {
+          savedWeekGoal.textContent = `🎯 ${val}`;
+          weekGoalInput.value = val;
+          weekGoalInput.disabled = true;
+          weekGoalInput.classList.add('bg-gray-100', 'text-gray-500');
+          saveWeekGoalBtn.style.display = 'none';
+        } else {
+          savedWeekGoal.textContent = '';
+          weekGoalInput.value = '';
+          weekGoalInput.disabled = false;
+          weekGoalInput.classList.remove('bg-gray-100', 'text-gray-500');
+          saveWeekGoalBtn.style.display = '';
+        }
+      }
+      saveWeekGoalBtn.addEventListener('click', () => {
+        const val = weekGoalInput.value.trim();
+        const key = `toeic750_weekGoal_${currentState.week}`;
+        if (val) {
+          localStorage.setItem(key, val);
+          savedWeekGoal.textContent = `🎯 ${val}`;
+          weekGoalInput.disabled = true;
+          weekGoalInput.classList.add('bg-gray-100', 'text-gray-500');
+          saveWeekGoalBtn.style.display = 'none';
+        } else {
+          localStorage.removeItem(key);
+          savedWeekGoal.textContent = '';
+          weekGoalInput.disabled = false;
+          weekGoalInput.classList.remove('bg-gray-100', 'text-gray-500');
+          saveWeekGoalBtn.style.display = '';
+        }
+      });
+      weekGoalInput.addEventListener('input', () => {
+        savedWeekGoal.textContent = '';
+        weekGoalInput.disabled = false;
+        weekGoalInput.classList.remove('bg-gray-100', 'text-gray-500');
+        saveWeekGoalBtn.style.display = '';
+      });
+      // Khi đổi tuần thì load lại mục tiêu
+      const oldRenderWeeklyDetailView = renderWeeklyDetailView;
+      renderWeeklyDetailView = function () {
+        oldRenderWeeklyDetailView();
+        loadWeekGoal();
+      };
+      switchView();
+      updateOverallProgress();
+      loadWeekGoal();
+    }
+
+    const ctx = document.getElementById('scoreChart').getContext('2d');
+    let scoreChart = new Chart(ctx, { type: 'line', data: { labels: currentState.scores.labels, datasets: [{ label: 'Điểm TOEIC', data: currentState.scores.data, borderColor: '#c2410c', backgroundColor: 'rgba(234, 88, 12, 0.1)', fill: true, tension: 0.3 }] }, options: { responsive: true, maintainAspectRatio: false, scales: { y: { suggestedMin: 300, suggestedMax: 800 } }, plugins: { legend: { display: false } } } });
+
+    init();
+  </script>
+</body>
+
+</html>
