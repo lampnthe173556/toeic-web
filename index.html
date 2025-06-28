@@ -100,13 +100,9 @@
               <canvas id="scoreChart"></canvas>
             </div>
             <div class="mt-4 flex gap-2 justify-center">
-              <input type="number" id="new-score-input" placeholder="Nhập điểm mới..."
-                class="p-2 border rounded-md w-32 text-center">
-              <input type="text" id="test-label-input" placeholder="Tuần/Test"
-                class="p-2 border rounded-md w-24 text-center">
-              <button id="add-score-btn"
-                class="bg-orange-600 text-white font-semibold px-4 py-2 rounded-md hover:bg-orange-700 transition">Thêm
-                điểm</button>
+              <button id="reset-scorechart-btn"
+                class="bg-red-600 text-white font-semibold px-4 py-2 rounded-md hover:bg-red-700 transition">Reset biểu
+                đồ điểm</button>
             </div>
           </div>
 
@@ -197,10 +193,11 @@
   <div id="test-modal"
     class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
     <div
-      class="modal-content bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto p-6 md:p-8 transform scale-95">
+      class="modal-content bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto p-6 md:p-8 transform scale-95 relative">
+      <button id="modal-close-btn"
+        class="absolute top-4 right-4 text-stone-500 hover:text-stone-800 text-3xl z-20">&times;</button>
       <div class="flex justify-between items-center mb-4">
         <h2 id="modal-title" class="text-2xl font-bold text-orange-900">Mini Test</h2>
-        <button id="modal-close-btn" class="text-stone-500 hover:text-stone-800 text-3xl">&times;</button>
       </div>
       <div id="modal-body" class="space-y-6"></div>
       <div class="mt-6 text-right">
@@ -220,7 +217,8 @@
     by lampnt
   </a>
 
-  <script src="script.js"></script>
+  <script src="data.js"></script>
+  <script src="script-new.js"></script>
 </body>
 
 </html>
